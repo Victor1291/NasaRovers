@@ -1,9 +1,9 @@
 package com.shu.nasarovers.delegate
 
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.shu.nasarovers.models.Photos
-import com.example.m17_recyclerview.nasaList.DiffUtilCallback
 
 class HorizontalAdapter (
     private val horizontalDelegate: HorizontalAdapterDelegate
@@ -33,4 +33,11 @@ class HorizontalAdapter (
         val item = data[position]
         return horizontalDelegate.getItemViewType(item)
     }
+}
+
+class DiffUtilCallback : DiffUtil.ItemCallback<Photos>() {
+    override fun areItemsTheSame(oldItem: Photos, newItem: Photos): Boolean =
+        oldItem.id == newItem.id
+
+    override fun areContentsTheSame(oldItem: Photos, newItem: Photos): Boolean = oldItem == newItem
 }

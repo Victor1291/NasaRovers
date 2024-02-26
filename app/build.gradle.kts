@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
     id("kotlin-parcelize")
 }
 
@@ -68,7 +67,6 @@ dependencies {
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.14.2")
-    ksp("com.github.bumptech.glide:compiler:4.14.2")
 
     //RoundImageView
     implementation("de.hdodenhof:circleimageview:3.1.0")
